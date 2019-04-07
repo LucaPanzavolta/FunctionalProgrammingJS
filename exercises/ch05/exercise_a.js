@@ -9,9 +9,16 @@
 //
 // Use `compose()` to rewrite the function below.
 
-
 // isLastInStock :: [Car] -> Boolean
-const isLastInStock = (cars) => {
+
+// BEFORE REFACTORING
+/* const isLastInStock = (cars) => {
   const lastCar = last(cars);
   return prop('in_stock', lastCar);
-};
+}; */
+
+// REFACTORING
+const isLastInStock = compose(
+  prop('in_stock'),
+  last,
+);
